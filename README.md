@@ -1,124 +1,159 @@
-# AWS Multi-Tier Architecture (Highly Available & Scalable)
+# ☁️ AWS Cloud Architecture Portfolio
 
 ## 📌 Overview
 
-This project presents a production-style design for a highly available, secure, and scalable multi-tier web application on AWS.
-The architecture follows best practices for networking, security, performance optimization, and hybrid connectivity.
+A collection of AWS cloud architecture projects demonstrating secure,
+highly available, scalable, and production-style infrastructure designs.
+
+The projects are designed following AWS Well-Architected Framework principles:
+
+- Security
+- Reliability
+- Performance Efficiency
+- Cost Optimization
+- Operational Excellence
 
 ---
 
-## 🧱 Architecture Design
+# 🏗️ Projects
 
-### 🌐 Networking
+# 1️⃣ Secure Two-Tier Architecture (EC2 Based)
 
-* VPC: `10.0.0.0/16`
-* Public Subnets:
+## 📌 Overview
 
-  * `10.0.10.0/24` (AZ-A)
-  * `10.0.20.0/24` (AZ-B)
-* Private Subnets:
+Designed a secure two-tier web application architecture deployed
+across multiple Availability Zones.
 
-  * `10.0.100.0/24` (AZ-A)
-  * `10.0.200.0/24` (AZ-B)
-* Internet Gateway for public access
-* NAT Gateway for outbound internet access from private subnets
+The architecture focuses on network isolation, secure access control,
+and high availability.
+
+## 🏛️ Architecture
+
+User Traffic
+
+↓
+Application Tier (EC2)
+
+↓
+Database Tier (Private EC2)
+
+## ☁️ AWS Services
+
+- Amazon VPC
+- EC2
+- Internet Gateway
+- NAT Gateway
+- Route Tables
+- Security Groups
+- Network ACLs
+- VPC Endpoint
+- Amazon S3
+
+## 🔐 Security
+
+- Private subnet isolation
+- Restricted inbound traffic
+- Least privilege Security Groups
+- No direct database exposure
+
+## 📈 Availability
+
+- Multi-AZ deployment
+- Fault tolerant network design
+- Secure outbound updates
+---
+
+# 2️⃣ Secure Two-Tier Web Application (ALB + RDS)
+
+## 📌 Overview
+
+Production-style two-tier architecture using EC2 for the application
+layer and Amazon RDS MySQL as the database layer.
+
+## 🏛️ Architecture
+
+Client
+
+↓
+
+Application Load Balancer (HTTPS)
+
+↓
+EC2 Auto Scaling Group
+
+↓
+Amazon RDS MySQL Multi-AZ
+
+## ☁️ AWS Services
+
+- VPC
+- Application Load Balancer
+- EC2
+- Auto Scaling
+- Amazon RDS
+- NAT Gateway
+- AWS Certificate Manager
+- Security Groups
+
+## 🔐 Security
+
+- HTTPS encryption using ACM
+- SSL termination at ALB
+- Private application/database layers
+- Security Group based communication
+
+
+## 📈 High Availability
+
+- ALB across multiple AZs
+- EC2 Auto Scaling
+- RDS Multi-AZ failover
 
 ---
 
-### ⚖️ High Availability & Scalability
+# 3️⃣ Production Multi-Tier AWS Architecture
 
-* Application Load Balancer (ALB) distributes traffic across:
+## 📌 Overview
 
-  * EC2 instances in multiple Availability Zones
-* Auto Scaling Group ensures:
+Enterprise-style scalable AWS architecture designed for production workloads.
 
-  * High availability
-  * Automatic scaling based on demand
+## ☁️ AWS Services
 
----
+- Route 53
+- CloudFront
+- ALB
+- Auto Scaling
+- EC2
+- RDS Multi-AZ
+- SQS
+- IAM
+- KMS
 
-### 🖥️ Compute Layer
+## 🚀 Features
 
-* EC2 instances (EBS-backed) deployed across two AZs
-* Instances handle both Web & Application tiers
-* IAM Roles attached to EC2 for secure access to AWS services
-
----
-
-### 🗄️ Database Layer
-
-* Amazon RDS deployed in **Multi-AZ configuration**
-
-  * Primary instance (AZ-A)
-  * Standby instance (AZ-B) for failover
-* Data encryption enabled using AWS KMS
+- High availability
+- Scalability
+- Decoupled architecture
+- Secure access management
+- Encryption at rest
 
 ---
 
-### 🔄 Decoupling Layer
+# 🧠 Skills Demonstrated
 
-* Amazon SQS used to decouple application components
-* Flow:
-
-  * EC2 → SQS → (processing) → RDS
-* Prevents database overload during traffic spikes
-
----
-
-### 🚀 Performance Optimization
-
-* Amazon CloudFront used as CDN
-* Amazon Route 53 for DNS management
-* Global users are routed efficiently with low latency
+- AWS Architecture Design
+- VPC Networking
+- Subnet Design
+- Routing
+- Load Balancing
+- Auto Scaling
+- Database Architecture
+- IAM Security
+- Cloud Security
+- High Availability
 
 ---
 
-### 🔐 Security
+# 👨‍💻 Author
 
-* Security Groups (instance-level protection)
-* Network ACLs (subnet-level protection)
-* IAM Roles (no hardcoded access keys)
-* Data encryption at rest (RDS, EBS, SQS via KMS)
-
----
-
-### 🔗 Hybrid Connectivity
-
-* AWS Direct Connect (primary, low latency)
-* Site-to-Site VPN (backup connection over internet)
-* Secure connection to on-premises datacenter
-
----
-
-## 🖼️ Architecture Diagram
-
-![Architecture](architecture.png)
-
----
-
-## 🎯 Key Features
-
-* Multi-AZ High Availability
-* Scalable Infrastructure (Auto Scaling)
-* Secure Access Control (IAM, SG, NACL)
-* Database Failover (RDS Multi-AZ)
-* Decoupled Architecture (SQS)
-* Global Performance Optimization (CloudFront)
-* Hybrid Cloud Integration
-
----
-
-## 🧠 Skills Demonstrated
-
-* AWS Architecture Design
-* Networking (VPC, Subnets, Routing)
-* High Availability & Fault Tolerance
-* Security Best Practices
-* Cloud Scalability Patterns
-* Hybrid Infrastructure Design
-
----
-
-## 👨‍💻 Author
-
-**Mohamed Gamal**
+Mohamed Gamal Nasser
