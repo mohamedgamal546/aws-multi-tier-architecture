@@ -23,6 +23,7 @@ This project presents a production-style design for a highly available, secure, 
 - Internet Gateway for public access
 - NAT Gateway for outbound internet access from private subnets
 
+
 ---
 
 ## ⚖️ High Availability & Scalability
@@ -34,6 +35,7 @@ This project presents a production-style design for a highly available, secure, 
   - High availability
   - Automatic scaling based on demand
 
+
 ---
 
 ## 🖥️ Compute Layer
@@ -41,6 +43,7 @@ This project presents a production-style design for a highly available, secure, 
 - EC2 instances (EBS-backed) deployed across two AZs
 - Instances handle both Web & Application tiers
 - IAM Roles attached to EC2 for secure access to AWS services
+
 
 ---
 
@@ -52,10 +55,11 @@ This project presents a production-style design for a highly available, secure, 
 
 - Data encryption enabled using AWS KMS
 
+
 ---
 
 ## 🔄 Decoupling Layer
 
 - Amazon SQS used to decouple application components
 
-- Flow:
+**Flow:**
