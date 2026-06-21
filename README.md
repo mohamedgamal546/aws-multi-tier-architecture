@@ -2,75 +2,74 @@
 
 ## 📌 Overview
 
-A collection of AWS cloud architecture projects demonstrating secure,
-highly available, scalable, and production-style infrastructure designs.
+A collection of AWS cloud architecture projects demonstrating secure, highly available, scalable, and production-style infrastructure designs.
 
 The projects are designed following AWS Well-Architected Framework principles:
 
-- Security
-- Reliability
-- Performance Efficiency
-- Cost Optimization
-- Operational Excellence
+* Security
+* Reliability
+* Performance Efficiency
+* Cost Optimization
+* Operational Excellence
 
 ---
 
 # 🏗️ Projects
 
-# 1️⃣ Secure Two-Tier Architecture (EC2 Based)
+## 1️⃣ Secure Two-Tier Architecture (EC2 Based)
 
-## 📌 Overview
+### 📌 Overview
 
-Designed a secure two-tier web application architecture deployed
-across multiple Availability Zones.
+Designed a secure two-tier web application architecture deployed across multiple Availability Zones.
 
-The architecture focuses on network isolation, secure access control,
-and high availability.
+The architecture focuses on network isolation, secure access control, and high availability.
 
-## 🏛️ Architecture
+### 🏛️ Architecture
 
 User Traffic
 
 ↓
+
 Application Tier (EC2)
 
 ↓
+
 Database Tier (Private EC2)
 
-## ☁️ AWS Services
+### ☁️ AWS Services
 
-- Amazon VPC
-- EC2
-- Internet Gateway
-- NAT Gateway
-- Route Tables
-- Security Groups
-- Network ACLs
-- VPC Endpoint
-- Amazon S3
+* Amazon VPC
+* EC2
+* Internet Gateway
+* NAT Gateway
+* Route Tables
+* Security Groups
+* Network ACLs
+* VPC Endpoint
+* Amazon S3
 
-## 🔐 Security
+### 🔐 Security
 
-- Private subnet isolation
-- Restricted inbound traffic
-- Least privilege Security Groups
-- No direct database exposure
+* Private subnet isolation
+* Restricted inbound traffic
+* Least privilege Security Groups
+* No direct database exposure
 
-## 📈 Availability
+### 📈 Availability
 
-- Multi-AZ deployment
-- Fault tolerant network design
-- Secure outbound updates
+* Multi-AZ deployment
+* Fault tolerant network design
+* Secure outbound updates
+
 ---
 
-# 2️⃣ Secure Two-Tier Web Application (ALB + RDS)
+## 2️⃣ Secure Two-Tier Web Application (ALB + RDS)
 
-## 📌 Overview
+### 📌 Overview
 
-Production-style two-tier architecture using EC2 for the application
-layer and Amazon RDS MySQL as the database layer.
+Production-style two-tier architecture using EC2 for the application layer and Amazon RDS MySQL as the database layer.
 
-## 🏛️ Architecture
+### 🏛️ Architecture
 
 Client
 
@@ -79,81 +78,157 @@ Client
 Application Load Balancer (HTTPS)
 
 ↓
+
 EC2 Auto Scaling Group
 
 ↓
+
 Amazon RDS MySQL Multi-AZ
 
-## ☁️ AWS Services
+### ☁️ AWS Services
 
-- VPC
-- Application Load Balancer
-- EC2
-- Auto Scaling
-- Amazon RDS
-- NAT Gateway
-- AWS Certificate Manager
-- Security Groups
+* Amazon VPC
+* Application Load Balancer
+* EC2
+* Auto Scaling
+* Amazon RDS
+* NAT Gateway
+* AWS Certificate Manager
+* Security Groups
 
-## 🔐 Security
+### 🔐 Security
 
-- HTTPS encryption using ACM
-- SSL termination at ALB
-- Private application/database layers
-- Security Group based communication
+* HTTPS encryption using ACM
+* SSL termination at ALB
+* Private application/database layers
+* Security Group based communication
 
+### 📈 High Availability
 
-## 📈 High Availability
-
-- ALB across multiple AZs
-- EC2 Auto Scaling
-- RDS Multi-AZ failover
+* ALB across multiple AZs
+* EC2 Auto Scaling
+* RDS Multi-AZ failover
 
 ---
 
-# 3️⃣ Production Multi-Tier AWS Architecture
+## 3️⃣ Production Multi-Tier AWS Architecture
 
-## 📌 Overview
+### 📌 Overview
 
 Enterprise-style scalable AWS architecture designed for production workloads.
 
-## ☁️ AWS Services
+### ☁️ AWS Services
 
-- Route 53
-- CloudFront
-- ALB
-- Auto Scaling
-- EC2
-- RDS Multi-AZ
-- SQS
-- IAM
-- KMS
+* Route 53
+* CloudFront
+* Application Load Balancer
+* Auto Scaling
+* EC2
+* Amazon RDS Multi-AZ
+* Amazon SQS
+* IAM
+* AWS KMS
 
-## 🚀 Features
+### 🚀 Features
 
-- High availability
-- Scalability
-- Decoupled architecture
-- Secure access management
-- Encryption at rest
+* High availability
+* Scalability
+* Decoupled architecture
+* Secure access management
+* Encryption at rest
 
----
+### 🧠 Skills Demonstrated
 
-# 🧠 Skills Demonstrated
-
-- AWS Architecture Design
-- VPC Networking
-- Subnet Design
-- Routing
-- Load Balancing
-- Auto Scaling
-- Database Architecture
-- IAM Security
-- Cloud Security
-- High Availability
+* AWS Architecture Design
+* VPC Networking
+* Subnet Design
+* Routing
+* Load Balancing
+* Auto Scaling
+* Database Architecture
+* IAM Security
+* Cloud Security
+* High Availability
 
 ---
 
-# 👨‍💻 Author
+## 4️⃣ Hybrid On-Premises Web Application Architecture
+
+### 📌 Overview
+
+Designed a secure and highly available AWS web application architecture that allows users from an on-premises corporate network to access the application through the internet while enforcing strict security controls.
+
+Access to the application is restricted to two whitelisted public IP addresses configured on the corporate firewall.
+
+### 🏛️ Architecture
+
+Corporate Users
+
+↓
+
+On-Premises Firewall
+
+↓
+
+Whitelisted Public IP Addresses
+
+↓
+
+Application Load Balancer
+
+↓
+
+EC2 Auto Scaling Group
+
+### ☁️ AWS Services
+
+* Amazon VPC
+* Application Load Balancer (ALB)
+* EC2
+* Auto Scaling Group
+* Internet Gateway
+* NAT Gateway
+* Security Groups
+* Route Tables
+
+### 🔐 Security
+
+* IP Whitelisting
+* Security Group Restrictions
+* ALB-Only Application Access
+* No Direct EC2 Internet Access
+* Least Privilege Access Model
+
+### 📈 High Availability
+
+* Multi-AZ Deployment
+* Auto Scaling Group
+* Load Balanced Traffic Distribution
+* Fault Tolerant Design
+
+### 🧠 Skills Demonstrated
+
+* AWS Architecture Design
+* Hybrid Connectivity
+* VPC Networking
+* Security Groups
+* IP Whitelisting
+* Load Balancing
+* Auto Scaling
+* High Availability Design
+* Cloud Security Best Practices
+
+---
+
+## 📂 Repository Structure
+
+* two-tier-ec2-database
+* two-tier-rds-alb-acm
+* multi-tier-production
+* hybrid-onprem-web-tier
+
+---
+
+## 👨‍💻 Author
 
 Mohamed Gamal Nasser
