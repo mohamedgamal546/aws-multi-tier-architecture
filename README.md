@@ -1,234 +1,98 @@
-# ☁️ AWS Cloud Architecture Portfolio
+☁️ AWS Cloud Architecture Portfolio
 
-## 📌 Overview
+📌 Overview
 
-A collection of AWS cloud architecture projects demonstrating secure, highly available, scalable, and production-style infrastructure designs.
+This repository contains a collection of AWS cloud architecture projects that demonstrate secure, highly available, scalable, and production-ready infrastructure designs.
 
-The projects are designed following AWS Well-Architected Framework principles:
+Each project is based on real-world architecture scenarios and follows AWS Well-Architected Framework best practices, focusing on networking, security, scalability, reliability, and operational excellence.
 
-* Security
-* Reliability
-* Performance Efficiency
-* Cost Optimization
-* Operational Excellence
+⸻
 
----
+📂 Projects
 
-# 🏗️ Projects
+1️⃣ Secure Two-Tier Architecture (EC2 Database)
 
-## 1️⃣ Secure Two-Tier Architecture (EC2 Based)
+A highly available two-tier architecture using Amazon EC2 for both the application and database tiers with private networking and secure access controls.
 
-### 📌 Overview
+📁 two-tier-ec2-database
 
-Designed a secure two-tier web application architecture deployed across multiple Availability Zones.
+⸻
 
-The architecture focuses on network isolation, secure access control, and high availability.
+2️⃣ Secure Two-Tier Web Application (ALB + RDS)
 
-### 🏛️ Architecture
+A production-style two-tier architecture using Amazon EC2, Application Load Balancer, Auto Scaling, AWS Certificate Manager, and Amazon RDS Multi-AZ.
 
-User Traffic
+📁 two-tier-rds-alb-acm
 
-↓
+⸻
 
-Application Tier (EC2)
+3️⃣ Production Multi-Tier AWS Architecture
 
-↓
+An enterprise-grade multi-tier architecture featuring Auto Scaling, Amazon RDS Multi-AZ, Amazon SQS, Route 53, CloudFront, IAM, AWS KMS, and hybrid connectivity.
 
-Database Tier (Private EC2)
+📁 multi-tier-production
 
-### ☁️ AWS Services
+⸻
 
-* Amazon VPC
-* EC2
-* Internet Gateway
-* NAT Gateway
-* Route Tables
-* Security Groups
-* Network ACLs
-* VPC Endpoint
-* Amazon S3
+4️⃣ Hybrid On-Premises Web Application
 
-### 🔐 Security
+A secure hybrid architecture that allows users from an on-premises network to access an AWS-hosted application through whitelisted public IP addresses while maintaining high availability and fault tolerance.
 
-* Private subnet isolation
-* Restricted inbound traffic
-* Least privilege Security Groups
-* No direct database exposure
+📁 hybrid-onprem-web-tier
 
-### 📈 Availability
+⸻
 
-* Multi-AZ deployment
-* Fault tolerant network design
-* Secure outbound updates
+5️⃣ Highly Available Database Architecture
 
----
+A production database architecture using Amazon RDS Multi-AZ and Read Replicas to isolate reporting workloads, improve performance, and provide automatic failover with encrypted database connections.
 
-## 2️⃣ Secure Two-Tier Web Application (ALB + RDS)
+📁 database-ha-reporting
 
-### 📌 Overview
+⸻
 
-Production-style two-tier architecture using EC2 for the application layer and Amazon RDS MySQL as the database layer.
-
-### 🏛️ Architecture
-
-Client
-
-↓
-
-Application Load Balancer (HTTPS)
-
-↓
-
-EC2 Auto Scaling Group
-
-↓
-
-Amazon RDS MySQL Multi-AZ
-
-### ☁️ AWS Services
+🚀 AWS Services Covered
 
 * Amazon VPC
-* Application Load Balancer
 * EC2
 * Auto Scaling
+* Application Load Balancer
 * Amazon RDS
-* NAT Gateway
-* AWS Certificate Manager
-* Security Groups
-
-### 🔐 Security
-
-* HTTPS encryption using ACM
-* SSL termination at ALB
-* Private application/database layers
-* Security Group based communication
-
-### 📈 High Availability
-
-* ALB across multiple AZs
-* EC2 Auto Scaling
-* RDS Multi-AZ failover
-
----
-
-## 3️⃣ Production Multi-Tier AWS Architecture
-
-### 📌 Overview
-
-Enterprise-style scalable AWS architecture designed for production workloads.
-
-### ☁️ AWS Services
-
+* Read Replicas
+* Multi-AZ
 * Route 53
 * CloudFront
-* Application Load Balancer
-* Auto Scaling
-* EC2
-* Amazon RDS Multi-AZ
 * Amazon SQS
+* NAT Gateway
+* Internet Gateway
 * IAM
 * AWS KMS
+* AWS Certificate Manager
+* Security Groups
+* Network ACLs
+* VPC Endpoints
 
-### 🚀 Features
+⸻
 
-* High availability
-* Scalability
-* Decoupled architecture
-* Secure access management
-* Encryption at rest
-
-### 🧠 Skills Demonstrated
+🧠 Skills Demonstrated
 
 * AWS Architecture Design
 * VPC Networking
-* Subnet Design
-* Routing
+* High Availability
+* Fault Tolerance
 * Load Balancing
 * Auto Scaling
 * Database Architecture
-* IAM Security
-* Cloud Security
-* High Availability
-
----
-
-## 4️⃣ Hybrid On-Premises Web Application Architecture
-
-### 📌 Overview
-
-Designed a secure and highly available AWS web application architecture that allows users from an on-premises corporate network to access the application through the internet while enforcing strict security controls.
-
-Access to the application is restricted to two whitelisted public IP addresses configured on the corporate firewall.
-
-### 🏛️ Architecture
-
-Corporate Users
-
-↓
-
-On-Premises Firewall
-
-↓
-
-Whitelisted Public IP Addresses
-
-↓
-
-Application Load Balancer
-
-↓
-
-EC2 Auto Scaling Group
-
-### ☁️ AWS Services
-
-* Amazon VPC
-* Application Load Balancer (ALB)
-* EC2
-* Auto Scaling Group
-* Internet Gateway
-* NAT Gateway
-* Security Groups
-* Route Tables
-
-### 🔐 Security
-
-* IP Whitelisting
-* Security Group Restrictions
-* ALB-Only Application Access
-* No Direct EC2 Internet Access
-* Least Privilege Access Model
-
-### 📈 High Availability
-
-* Multi-AZ Deployment
-* Auto Scaling Group
-* Load Balanced Traffic Distribution
-* Fault Tolerant Design
-
-### 🧠 Skills Demonstrated
-
-* AWS Architecture Design
 * Hybrid Connectivity
-* VPC Networking
-* Security Groups
-* IP Whitelisting
-* Load Balancing
-* Auto Scaling
-* High Availability Design
-* Cloud Security Best Practices
+* Cloud Security
+* Encryption
+* Performance Optimization
+* Infrastructure Design
+* AWS Well-Architected Framework
 
----
+⸻
 
-## 📂 Repository Structure
-
-* two-tier-ec2-database
-* two-tier-rds-alb-acm
-* multi-tier-production
-* hybrid-onprem-web-tier
-
----
-
-## 👨‍💻 Author
+👨‍💻 Author
 
 Mohamed Gamal Nasser
+
+Cloud & DevOps Engineer | AWS | Linux | Terraform | Docker | Kubernetes
