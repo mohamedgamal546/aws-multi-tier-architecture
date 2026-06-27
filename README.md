@@ -94,5 +94,3 @@ A production database architecture using Amazon RDS Multi-AZ and Read Replicas t
 👨‍💻 Author
 
 Mohamed Gamal Nasser
-
-Cloud & DevOps Engineer | AWS | Linux | Terraform | Docker | Kubernetes
